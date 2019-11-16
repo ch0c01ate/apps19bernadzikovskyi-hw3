@@ -5,6 +5,7 @@ import ua.edu.ucu.functions.MyComparator;
 import ua.edu.ucu.functions.MyFunction;
 import ua.edu.ucu.functions.MyPredicate;
 
+
 public class SmartArrayApp {
 
     public static Integer[]
