@@ -3,13 +3,15 @@ package ua.edu.ucu.smartarr;
 abstract class SmartArrayDecorator implements SmartArray {
 
     protected Object[] array;
+    protected SmartArray smartArray;
 
     public SmartArrayDecorator(SmartArray smartArray) {
-        this.setArray(smartArray.toArray());
+        this.smartArray = smartArray;
     }
 
     @Override
     public Object[] toArray() {
+        decorate();
         return this.getArray();
     }
 
@@ -29,5 +31,9 @@ abstract class SmartArrayDecorator implements SmartArray {
 
     public Object[] getArray() {
         return array;
+    }
+
+    protected void decorate() {
+        this.setArray(smartArray.toArray().clone());
     }
 }

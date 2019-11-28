@@ -83,8 +83,7 @@ public class SmartArrayApp {
                         new FilterDecorator(
                                 new FilterDecorator(
                                         new BaseArray(students), isSecondYearStudent),
-                                gpaIsGreaterThan4),
-                        getName),
+                                gpaIsGreaterThan4)),
                 cmpSurnames);
 
         String[] res = new String[studentArray.size()];

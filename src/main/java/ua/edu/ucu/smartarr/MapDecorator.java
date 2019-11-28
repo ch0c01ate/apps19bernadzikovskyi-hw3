@@ -4,11 +4,21 @@ import ua.edu.ucu.functions.MyFunction;
 
 public class MapDecorator extends SmartArrayDecorator {
 
+    MyFunction func;
+
     public MapDecorator(SmartArray smartArray, MyFunction func) {
         super(smartArray);
+        this.func = func;
+        decorate();
+    }
 
-        for (int i = 0; i < this.getArray().length; i++) {
-            this.getArray()[i] = func.apply(this.getArray()[i]);
+    @Override
+    protected void decorate(){
+        super.decorate();
+        Object[] array = this.getArray();
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = func.apply(array[i]);
         }
     }
 }

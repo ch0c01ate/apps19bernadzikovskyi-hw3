@@ -1,7 +1,7 @@
 package ua.edu.ucu;
 
 
-class Student {
+public class Student {
 
     private double GPA;
     private int year;
@@ -36,4 +36,13 @@ class Student {
         return "Student{name=" + name + ", surname=" + surname + ", " + "GPA=" + GPA + ", year=" + year + '}';
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (!obj.getClass().equals(this.getClass())) { return false; }
+        Student student = (Student) obj;
+        return ((this.getName() == student.getName()) &&
+                (this.getYear() == student.getYear()) &&
+                (this.getSurname() == student.getSurname()) &&
+                (this.getGPA() == student.getGPA()));
+    }
 }
